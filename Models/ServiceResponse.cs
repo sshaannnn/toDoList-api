@@ -1,4 +1,4 @@
-namespace toDoList_api.Model
+namespace toDoList_api.Models
 {
     public class ServiceResponse<T>
     {

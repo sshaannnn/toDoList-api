@@ -58,3 +58,5 @@
 /Users/ysshaannnn/Desktop/todoList/toDoList-api/obj/Debug/net5.0/ref/toDoList-api.dll
 /Users/ysshaannnn/Desktop/todoList/toDoList-api/obj/Debug/net5.0/toDoList-api.pdb
 /Users/ysshaannnn/Desktop/todoList/toDoList-api/obj/Debug/net5.0/toDoList-api.genruntimeconfig.cache
+/Users/ysshaannnn/Desktop/todoList/toDoList-api/bin/Debug/net5.0/AutoMapper.dll
+/Users/ysshaannnn/Desktop/todoList/toDoList-api/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

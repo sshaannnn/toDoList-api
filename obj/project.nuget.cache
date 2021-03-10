@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XP6Gv0BK1UjEB84behNzluQSuLSi0+l0tQ7EPeOm8HXdBdM5lKjKWoMSlzZekehdRpXVYukPNXWtslSA7NkBcg==",
+  "dgSpecHash": "7O8du+f4oKzUQ0TlOk7ahD21nQIl7tEDMZTSx3gGoLT7t6q6kVEKkgvGL6hH5hC7v/Z55E9FIKg5orqCJ8njxg==",
   "success": true,
   "projectFilePath": "/Users/ysshaannnn/Desktop/todoList/toDoList-api/toDoList-api.csproj",
   "expectedPackageFiles": [
+    "/Users/ysshaannnn/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/ysshaannnn/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/microsoft.data.sqlclient/2.0.1/microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -71,7 +73,7 @@
     "/Users/ysshaannnn/.nuget/packages/system.private.datacontractserialization/4.3.0/system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/system.private.uri/4.3.2/system.private.uri.4.3.2.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
-    "/Users/ysshaannnn/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
+    "/Users/ysshaannnn/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/system.reflection.emit.lightweight/4.3.0/system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "/Users/ysshaannnn/.nuget/packages/system.reflection.extensions/4.3.0/system.reflection.extensions.4.3.0.nupkg.sha512",

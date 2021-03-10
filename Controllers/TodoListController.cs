@@ -1,4 +1,9 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using toDoList_api.Dto;
+using toDoList_api.Models;
 using toDoList_api.Services.TodoListService;
 
 namespace toDoList_api.Controllers
@@ -9,15 +14,28 @@ namespace toDoList_api.Controllers
     {
         private readonly ITodoListService _todoListService;
 
+
         public TodoListController(ITodoListService todoListService)
         {
             _todoListService = todoListService;
-
         }
-        [HttpGet("GetAll")]
-        public IActionResult GetAllLists()
+
+        private static List<TodoList> todoLists = new List<TodoList>
         {
-            return Ok(_todoListService.GetAllLists());
+
+        };
+
+        [HttpGet("GetAllTodoList")]
+        public async Task<IActionResult> GetAllLists()
+        {
+            // return Ok(_todoListService.GetAllLists());
+            return Ok(await _todoListService.GetAllLists());
+        }
+
+        [HttpPost("AddTodoList")]
+        public async Task<IActionResult> AddTodoList(AddTodoListDto newTodoList)
+        {
+            return Ok(await _todoListService.AddTodoList(newTodoList));
         }
     }
 }
