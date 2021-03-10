@@ -28,7 +28,6 @@ namespace toDoList_api.Controllers
         [HttpGet("GetAllTodoList")]
         public async Task<IActionResult> GetAllLists()
         {
-            // return Ok(_todoListService.GetAllLists());
             return Ok(await _todoListService.GetAllLists());
         }
 
