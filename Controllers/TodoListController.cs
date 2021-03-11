@@ -20,11 +20,6 @@ namespace toDoList_api.Controllers
             _todoListService = todoListService;
         }
 
-        private static List<TodoList> todoLists = new List<TodoList>
-        {
-
-        };
-
         [HttpGet("GetAllTodoList")]
         public async Task<IActionResult> GetAllLists()
         {
