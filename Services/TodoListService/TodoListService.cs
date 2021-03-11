@@ -62,8 +62,21 @@ namespace toDoList_api.Services.TodoListService
             try
             {
                 TodoList dbTodoList = await _context.TodoLists.FirstOrDefaultAsync(x => x.Id == updateTodoList.Id);
-                dbTodoList.Task = updateTodoList.Task;
-                dbTodoList.State = bool.Parse(updateTodoList.State);
+                if (updateTodoList.Task == null)
+                {
+                    dbTodoList.Task = dbTodoList.Task;
+                    dbTodoList.State = bool.Parse(updateTodoList.State);
+                }
+                else if (updateTodoList.State == null)
+                {
+                    dbTodoList.State = dbTodoList.State;
+                    dbTodoList.Task = updateTodoList.Task;
+                }
+                else
+                {
+                    dbTodoList.Task = updateTodoList.Task;
+                    dbTodoList.State = bool.Parse(updateTodoList.State);
+                }
                 _context.TodoLists.Update(dbTodoList);
                 await _context.SaveChangesAsync();
                 serviceResponse.Data = _mapper.Map<GetTodoListDto>(dbTodoList);
