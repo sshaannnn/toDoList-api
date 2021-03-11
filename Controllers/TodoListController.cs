@@ -36,5 +36,27 @@ namespace toDoList_api.Controllers
         {
             return Ok(await _todoListService.AddTodoList(newTodoList));
         }
+
+        [HttpPost("GetSingleTodoList")]
+        public async Task<IActionResult> GetSingleTodoList(GetSingleTodoListDto getSingleTodoList)
+        {
+            ServiceResponse<GetTodoListDto> response = await _todoListService.GetSingleTodoList(getSingleTodoList);
+            if (response.Data == null)
+            {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+
+        [HttpPost("DeleteTodoList")]
+        public async Task<IActionResult> DeleteTodoList(DeleteTodoListDto deleteTodoList)
+        {
+            ServiceResponse<GetTodoListDto> response = await _todoListService.DeleteTodoList(deleteTodoList);
+            if (response.Data == null)
+            {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
     }
 }

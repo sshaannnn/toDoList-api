@@ -9,6 +9,9 @@ namespace toDoList_api.Services.TodoListService
     {
         Task<ServiceResponse<List<GetTodoListDto>>> GetAllLists();
         Task<ServiceResponse<List<GetTodoListDto>>> AddTodoList(AddTodoListDto newTodoList);
+        Task<ServiceResponse<GetTodoListDto>> GetSingleTodoList(GetSingleTodoListDto getSingleTodoList);
+        Task<ServiceResponse<GetTodoListDto>> UpdateTodoList(UpdateTodoListDto updateTodoList);
+        Task<ServiceResponse<GetTodoListDto>> DeleteTodoList(DeleteTodoListDto deleteTodoList);
 
     }
 }
