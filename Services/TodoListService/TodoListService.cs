@@ -49,16 +49,31 @@ namespace toDoList_api.Services.TodoListService
         public async Task<ServiceResponse<List<GetTodoListDto>>> AddTodoList(AddTodoListDto newTodoList)
         {
             ServiceResponse<List<GetTodoListDto>> serviceResponse = new ServiceResponse<List<GetTodoListDto>>();
-            TodoList todoList = _mapper.Map<TodoList>(newTodoList);
-            await _context.TodoLists.AddAsync(todoList);
+            TodoList dbTodoList = _mapper.Map<TodoList>(newTodoList);
+            await _context.TodoLists.AddAsync(dbTodoList);
             await _context.SaveChangesAsync();
             serviceResponse.Data = (_context.TodoLists.Select(c => _mapper.Map<GetTodoListDto>(c))).ToList();
             return serviceResponse;
         }
 
-        public Task<ServiceResponse<GetTodoListDto>> UpdateTodoList(UpdateTodoListDto updateTodoList)
+        public async Task<ServiceResponse<GetTodoListDto>> UpdateTodoList(UpdateTodoListDto updateTodoList)
         {
-            throw new System.NotImplementedException();
+            ServiceResponse<GetTodoListDto> serviceResponse = new ServiceResponse<GetTodoListDto>();
+            try
+            {
+                TodoList dbTodoList = await _context.TodoLists.FirstOrDefaultAsync(x => x.Id == updateTodoList.Id);
+                dbTodoList.Task = updateTodoList.Task;
+                dbTodoList.State = bool.Parse(updateTodoList.State);
+                _context.TodoLists.Update(dbTodoList);
+                await _context.SaveChangesAsync();
+                serviceResponse.Data = _mapper.Map<GetTodoListDto>(dbTodoList);
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
+            }
+            return serviceResponse;
         }
 
         public async Task<ServiceResponse<GetTodoListDto>> DeleteTodoList(DeleteTodoListDto deleteTodoList)

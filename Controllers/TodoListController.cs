@@ -31,16 +31,28 @@ namespace toDoList_api.Controllers
             return Ok(await _todoListService.GetAllLists());
         }
 
+
+        [HttpPost("GetSingleTodoList")]
+        public async Task<IActionResult> GetSingleTodoList(GetSingleTodoListDto getSingleTodoList)
+        {
+            ServiceResponse<GetTodoListDto> response = await _todoListService.GetSingleTodoList(getSingleTodoList);
+            if (response.Data == null)
+            {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+
         [HttpPost("AddTodoList")]
         public async Task<IActionResult> AddTodoList(AddTodoListDto newTodoList)
         {
             return Ok(await _todoListService.AddTodoList(newTodoList));
         }
 
-        [HttpPost("GetSingleTodoList")]
-        public async Task<IActionResult> GetSingleTodoList(GetSingleTodoListDto getSingleTodoList)
+        [HttpPost("UpdateTodoList")]
+        public async Task<IActionResult> UpdateTodoList(UpdateTodoListDto updateTodoList)
         {
-            ServiceResponse<GetTodoListDto> response = await _todoListService.GetSingleTodoList(getSingleTodoList);
+            ServiceResponse<GetTodoListDto> response = await _todoListService.UpdateTodoList(updateTodoList);
             if (response.Data == null)
             {
                 return NotFound(response);
